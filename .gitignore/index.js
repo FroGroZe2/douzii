@@ -9,7 +9,7 @@ bot.on('ready', function(){
     console.log("Connecté");
 });
 
-bot.login("NDE5MTQyNjI3MDg3MDg5Njk1.DY0OXw.sIgE7ZV1hh7_xYYj0v97edI2LjU");
+bot.login(process.env.TOKEN);
 
 
 
