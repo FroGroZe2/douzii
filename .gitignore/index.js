@@ -51,7 +51,7 @@ bot.on('message', message => {
     message.reply(":point_right:help envoyé en MP:envelope_with_arrow:");
 }
 
-if (message.content.startsWith("*kick")) {
+if (message.content.startsWith( prefix + "kick")) {
     // Easy way to get member object though mentions.
     var member= message.mentions.members.first();
     // kick
@@ -63,7 +63,7 @@ if (message.content.startsWith("*kick")) {
         message.channel.send(":x: **Erreur : Vous n'avez pas les permissions !**");
 });
 
-if (message.content.startsWith("*ban")) {
+if (message.content.startsWith( prefix + "ban")) {
 // Easy way to get member object though mentions.
 var member= message.mentions.members.first();
 // ban
@@ -111,11 +111,11 @@ if (message.content.startsWith( prefix + "setgame")) {
         return message.channel.send('**Le** `joue à...` **du bot a été défini**.')
     }}
 
-    if (message.content === '*support') {
+    if (message.content.startsWith ( prefix + 'support')) {
         message.channel.send('**Voici le serveur discord de mon créateur : https://discord.gg/FR4KZrT**')
     }
 
-    if (message.content === '*invit') {
+    if (message.content.startsWith ( prefix + 'invit')) {
         message.channel.send("**Pour m ajouter à ton server :)  | **https://discordapp.com/oauth2/authorize?client_id=419142627087089695&scope=bot&permissions=2146958591")
     }
 
@@ -123,7 +123,7 @@ if (message.content.startsWith( prefix + "setgame")) {
         message.channel.send(message.author.avatarURL);
 }
 
-if (message.content.startsWith("*ui")) {
+if (message.content.startsWith( prefix + "ui")) {
     let user = message.mentions.users.first() ? message.mentions.users.first() : message.author
     let member = message.guild.member(user);
     let roles = [];
@@ -190,7 +190,7 @@ if (message.content.startsWith("*ui")) {
     });
 }
 
-if (message.content.startsWith("*ping")) {
+if (message.content.startsWith( prefix + "ping")) {
     var now = require('performance-now');
     var startTime = now();
     message.channel.send("**pong = calcul...**")
